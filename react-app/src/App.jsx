@@ -1,7 +1,9 @@
 import Background from "./Background";
 
 function App() {
-  return <Background />;
+  return (
+    <Background />
+  );
 }
 
 export default App;
