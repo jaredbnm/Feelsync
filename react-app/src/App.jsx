@@ -1,8 +1,8 @@
-import Test from "./Test.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
-    <Test />
+    <Navbar />
   );
 }
 
