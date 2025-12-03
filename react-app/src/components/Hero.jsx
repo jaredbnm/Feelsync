@@ -10,8 +10,10 @@ function Hero() {
       </h1>
 
       <p className="mt-4 max-w-md text-sm font-light text-slate-50 md:mt-6 md:max-w-xl md:text-lg">
-        Feeling something? There’s a song for that. Let feelsync craft a playlist just for you.
+        Feeling something? There’s a song for that. <br/>
+        Let feelsync craft a playlist just for you.
       </p>
+      
 
       {/* button navigates to mood selection page */}
       <button
