@@ -10,7 +10,10 @@ function Hero() {
       </p>
 
       {/* button navigates to mood selection page */}
-      <button className="mt-8 rounded-2xl border bg-slate-50/20 text-slate-50 border-white/70 px-6 py-2 text-base font-semibold hover:bg-white hover:text-slate-900 transition md:px-8 md:py-3 md:text-lg">
+      <button
+        onClick={() => Navigate("/moods")}
+        className="mt-8 rounded-2xl border bg-slate-50/20 text-slate-50 border-white/70 px-6 py-2 text-base font-semibold hover:bg-white hover:text-slate-900 transition md:px-8 md:py-3 md:text-lg"
+      >
         Get Started
       </button>
     </section>
