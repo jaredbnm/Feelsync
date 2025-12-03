@@ -1,0 +1,20 @@
+function Hero() {
+  return (
+    <section className="flex flex-col items-center text-center pt-16 pb-10 px-4 md:pt-24">
+      <h1 className="text-4xl font-extrabold text-slate-50 tracking-tight md:text-6xl">
+        feelsync
+      </h1>
+
+      <p className="mt-4 max-w-md text-sm text-slate-50 md:mt-6 md:max-w-xl md:text-lg">
+        Select your mood and discover your perfect playlist.
+      </p>
+
+      {/* button navigates to mood selection page */}
+      <button className="mt-8 rounded-md border bg-slate-50/20 text-slate-50 border-white/70 px-6 py-2 text-base font-semibold hover:bg-white hover:text-slate-900 transition md:px-8 md:py-3 md:text-lg">
+        Get Started
+      </button>
+    </section>
+  );
+}
+
+export default Hero;
