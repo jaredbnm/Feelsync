@@ -29,7 +29,15 @@ function TrackCard({ track }) {
         sm:gap-4 sm:p-4
       "
     >
-      <div className="h-12 w-12 shrink-0 overflow-hidden rounded-md bg-slate-300 sm:h-14 sm:w-14" />
+      {track.image ? (
+        <img
+          src={track.image}
+          alt={title + " album cover"}
+          className="h-12 w-12 shrink-0 overflow-hidden rounded-md object-cover bg-slate-300 sm:h-14 sm:w-14"
+        />
+      ) : (
+        <div className="h-12 w-12 shrink-0 overflow-hidden rounded-md bg-slate-300 sm:h-14 sm:w-14" />
+      )}
 
       <div className="flex-1">
         <p className="text-sm font-semibold sm:text-base">{title}</p>
@@ -95,6 +103,7 @@ TrackCard.propTypes = {
     duration: PropTypes.string.isRequired,
     audio: PropTypes.string,
     spotify: PropTypes.string,
+    image: PropTypes.string,
   }).isRequired,
 };
 
