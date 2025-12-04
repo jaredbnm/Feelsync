@@ -4,7 +4,7 @@ function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="flex flex-col items-center text-center pt-16 pb-5 px-4 md:pt-24 md:pb-10">
+    <section className="bg-slate-300/10 rounded-xl w-10/12 border border-slate-50/50 flex flex-col items-center text-center pt-10 pb-5 px-4 md:pt-12 md:pb-5 md:w-2/6">
       <h1 className="text-4xl font-extrabold text-slate-50 tracking-tight md:text-6xl">
         feelsync
       </h1>

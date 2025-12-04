@@ -40,8 +40,8 @@ function LandingPage() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-screen flex items-center justify-center md:items-stretch md:justify-start">
-        <main className="flex flex-col items-center justify-center gap-8 w-full -translate-y-17 md:translate-y-0 md:items-stretch md:justify-start">
+      <div className="min-h-screen flex items-center justify-center">
+        <main className="flex flex-col items-center justify-center gap-8 w-full -translate-y-12 md:translate-y-0">
           <Hero />
           <section className="w-full px-4 md:px-10 flex justify-center md:justify-start">
             <AlbumCarousel albums={albums} />
