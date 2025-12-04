@@ -11,8 +11,8 @@ function MoodButton({ label, onClick }) {
         text-center text-base font-medium text-white
         border border-white/30
         shadow-sm
-        hover:bg-white/25 hover:border-white/60
-        transition
+        hover:bg-white/25 hover:border-white/60 
+        transition transform hover:scale-105 duration-200
         md:w-auto md:px-5 md:py-2.5 md:text-lg
       "
     >
