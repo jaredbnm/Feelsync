@@ -9,13 +9,13 @@ function Navbar() {
         <ul className="flex items-center gap-4 text-sm font-medium md:gap-8 md:text-base">
           <button
             onClick={() => navigate("/")}
-            className="cursor-pointer hover:underline"
+            className="cursor-pointer rounded-md px-2 py-1 transition bg-transparent border-none p-0 hover:bg-gray-200/70"
           >
             home
           </button>
           <button
             onClick={() => navigate("/mood-selection")}
-            className="cursor-pointer hover:underline bg-transparent border-none p-0"
+            className="cursor-pointer rounded-md px-2 py-1 transition bg-transparent border-none p-0 hover:bg-gray-200/70"
           >
             moods
           </button>

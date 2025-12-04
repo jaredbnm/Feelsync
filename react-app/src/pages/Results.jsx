@@ -3,9 +3,11 @@ import Navbar from "../components/Navbar";
 import MoodButton from "../components/MoodButton";
 import TrackCard from "../components/TrackCard";
 import { useParams } from "react-router-dom";
+
 import { playlists } from "../data/playlists";
 import { setMoodColors } from "../utils/moodColors";
 import { useEffect } from "react";
+import { spotifyPlaylists } from "../data/spotifyPlaylists";
 
 
 function Results() {
@@ -43,6 +45,10 @@ function Results() {
       : generateMockTracks(moodId)
     : [];
 
+  // Build Spotify playlist link if available
+  const spotifyId = moodId && spotifyPlaylists[moodId];
+  const spotifyUrl = spotifyId ? `https://open.spotify.com/playlist/${spotifyId}` : null;
+
   return (
     <div>
       <Navbar />
@@ -55,11 +61,25 @@ function Results() {
           </div>
         </div>
 
-        <section className="mt-6 text-center w-full px-2">
-          <h1 className="text-xl text-slate-50 font-semibold md:text-3xl">
-            Creating your <span className="font-bold">{moodName}</span>{" "}
-            playlist...
-          </h1>
+        <section className="mt-6 w-full px-2">
+          <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center">
+            <h1 className="text-xl text-slate-50 font-semibold md:text-3xl md:mr-6 text-center">
+              Creating your <span className="font-bold">{moodName}</span>{" "}
+              playlist...
+            </h1>
+            {spotifyUrl && (
+              <div className="mt-4 md:mt-0 text-center md:text-left">
+                <a
+                  href={spotifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition"
+                >
+                  Listen on Spotify
+                </a>
+              </div>
+            )}
+          </div>
         </section>
 
         <section className="mt-6 mx-auto w-full max-w-4xl rounded-xl bg-slate-500/40 p-4 md:mt-8 md:p-6 flex flex-col min-h-[200px] max-h-[60vh]">
