@@ -6,16 +6,6 @@ import { playlists } from "../data/playlists";
 import { spotifyPlaylists } from "../data/spotifyPlaylists";
 import { fetchDeezerPreview } from "../utils/deezer";
 
-async function enrichPlaylist(songs) {
-  const enriched = [];
-
-  for (const track of songs) {
-    const preview = await fetchDeezerPreview(track.title, track.artist);
-    enriched.push({ ...track, previewUrl: preview });
-  }
-
-  return enriched;
-}
 
 useEffect(() => {
   async function load() {
