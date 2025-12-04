@@ -3,20 +3,6 @@ import MoodButton from "../components/MoodButton";
 import TrackCard from "../components/TrackCard";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
-import { spotifyPlaylists } from "../data/spotifyPlaylists";
-import { fetchDeezerPreview } from "../utils/deezer";
-
-
-useEffect(() => {
-  async function load() {
-    const baseTracks = playlists[moodId] || [];
-    const enriched = await enrichPlaylist(baseTracks);
-    setTracks(enriched);
-  }
-
-  load();
-}, [moodId]);
-
 
 function Results() {
   const moodLabels = [
