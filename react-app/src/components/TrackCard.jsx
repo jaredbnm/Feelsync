@@ -1,5 +1,25 @@
+
+import React, { useRef, useState } from "react";
+
 function TrackCard({ track }) {
-  const { title, artist, duration } = track;
+  const { title, artist, duration, audio } = track;
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+  };
 
   return (
     <div
@@ -22,13 +42,45 @@ function TrackCard({ track }) {
         <div className="flex items-center gap-2">
           <div className="h-6 w-6 rounded-full bg-slate-300" />
 
-          <button className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white">
-            ►
-          </button>
+          {audio && (
+            <>
+              <audio
+                ref={audioRef}
+                src={audio.startsWith("assets/") ? `/${audio}` : audio}
+                onEnded={handleEnded}
+              >
+                <track kind="captions" label="No captions" />
+              </audio>
+              <button
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white"
+                onClick={handlePlay}
+                aria-label={isPlaying ? "Pause" : "Play"}
+              >
+                {isPlaying ? "❚❚" : "►"}
+              </button>
+            </>
+          )}
+          {!audio && (
+            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white" disabled title="No audio available">
+              ►
+            </button>
+          )}
         </div>
       </div>
     </div>
   );
 }
+
+
+import PropTypes from "prop-types";
+
+TrackCard.propTypes = {
+  track: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    artist: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    audio: PropTypes.string,
+  }).isRequired,
+};
 
 export default TrackCard;
