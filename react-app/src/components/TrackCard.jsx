@@ -1,4 +1,4 @@
-
+import spotifyIcon from "../assets/icons/spotify.svg";
 import React, { useRef, useState } from "react";
 
 function TrackCard({ track }) {
@@ -40,7 +40,18 @@ function TrackCard({ track }) {
         <span className="text-slate-500">{duration}</span>
 
         <div className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-full bg-slate-300" />
+          {track.spotify ? (
+            <a
+              href={track.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-6 w-6 flex items-center justify-center"
+            >
+              <img src={spotifyIcon} alt="Spotify" className="h-full w-full" />
+            </a>
+          ) : (
+            <div className="h-6 w-6 rounded-full bg-slate-300" />
+          )}
 
           {audio && (
             <>
@@ -61,7 +72,11 @@ function TrackCard({ track }) {
             </>
           )}
           {!audio && (
-            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white" disabled title="No audio available">
+            <button
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white"
+              disabled
+              title="No audio available"
+            >
               ►
             </button>
           )}
@@ -71,7 +86,6 @@ function TrackCard({ track }) {
   );
 }
 
-
 import PropTypes from "prop-types";
 
 TrackCard.propTypes = {
@@ -80,6 +94,7 @@ TrackCard.propTypes = {
     artist: PropTypes.string.isRequired,
     duration: PropTypes.string.isRequired,
     audio: PropTypes.string,
+    spotify: PropTypes.string,
   }).isRequired,
 };
 
