@@ -71,12 +71,47 @@ function TrackCard({ track }) {
                 <track kind="captions" label="No captions" />
               </audio>
               <button
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white"
-                onClick={handlePlay}
-                aria-label={isPlaying ? "Pause" : "Play"}
-              >
-                {isPlaying ? "❚❚" : "►"}
-              </button>
+  className="
+    inline-flex items-center gap-1.5
+    rounded-full px-3 py-1.5 text-xs font-medium
+    bg-slate-900 text-white
+    shadow-sm
+    hover:bg-slate-800 hover:shadow
+    active:scale-95
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400
+    transition
+  "
+  onClick={handlePlay}
+  aria-label={isPlaying ? 'Pause' : 'Play'}
+>
+  {isPlaying ? (
+    <>
+      <svg
+        viewBox="0 0 24 24"
+        className="h-3.5 w-3.5 fill-current"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="6" y="5" width="4" height="14" rx="1" />
+        <rect x="14" y="5" width="4" height="14" rx="1" />
+      </svg>
+      <span>Pause</span>
+    </>
+  ) : (
+    <>
+      <svg
+        viewBox="0 0 24 24"
+        className="h-3.5 w-3.5 fill-current"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M8 5v14l10-7-10-7z" />
+      </svg>
+      <span>Play</span>
+    </>
+  )}
+</button>
+
             </>
           )}
           {!audio && (
