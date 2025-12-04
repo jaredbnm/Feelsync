@@ -6,9 +6,7 @@ const moods = [
   "Sad",
   "Romantic",
   "Relaxed",
-  "Excited",
-  "Hype",
-  "Sleepy",
+  "Energetic",
   "Hardcore",
 ];
 

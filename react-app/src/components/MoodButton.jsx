@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 function MoodButton({ label, onClick }) {
+    const navigate = useNavigate();
+
   return (
     <button
-      onClick={onClick}
+      onClick={() => navigate(`/playlist/${label.toLowerCase()}`)}
       className="
-        w-full rounded-2xl bg-white/15 px-3 py-2
+        w-full max-w-xs mx-auto rounded-2xl bg-white/15 px-3 py-2
         text-center text-base font-medium text-white
         border border-white/30
         shadow-sm
