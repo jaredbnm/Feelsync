@@ -10,7 +10,7 @@ Web link: [here](https://feelsync-b6cxghhdhce6e4h6.centralus-01.azurewebsites.ne
 
 **Frontend**
 * ReactJS + Vite, React Router, Tailwind CSS
-For this project, I chose to work with React as I had been interested and learning it before, and felt that this would be a nice opportunity to. 
+* For this project, I chose to work with React as I had been interested and learning it before, and felt that this would be a nice opportunity to. 
 
 **Other**
 * Microsoft Azure, Figma, Node
