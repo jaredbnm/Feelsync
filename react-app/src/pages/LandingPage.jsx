@@ -1,6 +1,9 @@
+
 import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
 import AlbumCarousel from "../components/AlbumCarousel.jsx";
+import { useEffect } from "react";
+import { resetMoodColors } from "../utils/moodColors";
 
 const albums = [
   {
@@ -37,6 +40,9 @@ const albums = [
 ];
 
 function LandingPage() {
+  useEffect(() => {
+    resetMoodColors();
+  }, []);
   return (
     <div>
       <Navbar />

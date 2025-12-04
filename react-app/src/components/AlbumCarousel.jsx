@@ -1,7 +1,7 @@
 import AlbumCard from "./AlbumCard";
 
 function AlbumCarousel({ albums }) {
-  const loopAlbums = [...albums, ...albums];
+  const loopAlbums = [...albums, ...albums, ...albums];
 
   return (
     <div className="overflow-hidden w-full">

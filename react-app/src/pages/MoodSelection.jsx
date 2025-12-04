@@ -1,5 +1,9 @@
+
+
 import Navbar from "../components/Navbar";
 import MoodGrid from "../components/MoodGrid";
+import { setMoodColors, resetMoodColors } from "../utils/moodColors";
+import { useEffect } from "react";
 
 const moods = [
   "Happy",
@@ -11,6 +15,9 @@ const moods = [
 ];
 
 function MoodSelection() {
+  useEffect(() => {
+    resetMoodColors();
+  }, []);
   return (
     <div>
       <Navbar />
@@ -23,7 +30,7 @@ function MoodSelection() {
           Choose a mood from below to begin playlist generation.
         </p>
         <section className="mt-10 w-full max-w-md md:max-w-2xl">
-          <MoodGrid moods={moods} />
+          <MoodGrid moods={moods} onMoodSelect={setMoodColors} />
         </section>
         </main>
       </div>

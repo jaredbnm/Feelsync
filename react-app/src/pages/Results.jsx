@@ -1,8 +1,12 @@
+
 import Navbar from "../components/Navbar";
 import MoodButton from "../components/MoodButton";
 import TrackCard from "../components/TrackCard";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
+import { setMoodColors } from "../utils/moodColors";
+import { useEffect } from "react";
+
 
 function Results() {
   const moodLabels = [
@@ -18,6 +22,11 @@ function Results() {
   const moodName = moodId
     ? moodId.charAt(0).toUpperCase() + moodId.slice(1)
     : "your";
+
+  // Set background colors when moodId changes
+  useEffect(() => {
+    if (moodId) setMoodColors(moodId);
+  }, [moodId]);
 
   // Use local hardcoded playlists when available, otherwise generate simple mock tracks
   const generateMockTracks = (mood, count = 6) =>
@@ -41,7 +50,7 @@ function Results() {
         <div className="relative w-full">
           <div className="mx-auto flex gap-3 overflow-x-auto px-2 py-2 max-w-full sm:max-w-4xl sm:flex-wrap sm:justify-center no-scrollbar">
             {moodLabels.map((label, index) => (
-              <MoodButton key={moodIds[index]} label={label} />
+              <MoodButton key={moodIds[index]} label={label} onClick={setMoodColors} />
             ))}
           </div>
         </div>
