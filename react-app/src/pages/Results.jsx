@@ -3,6 +3,7 @@ import MoodButton from "../components/MoodButton";
 import TrackCard from "../components/TrackCard";
 import { useParams } from "react-router-dom";
 import { playlists } from "../data/playlists";
+import { spotifyPlaylists } from "../data/spotifyPlaylists";
 
 function Results() {
   const moodLabels = [

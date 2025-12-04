@@ -74,8 +74,8 @@ export const playlists = {
   ],
   hardcore: [
     { id: 1, title: "R.I.P.", artist: "Playboy Carti", duration: "3:12" },
-    { id: 2, title: "FNF", artist: "Lil Tecca", duration: "2:45" },
-    { id: 3, title: "BLEED IT", artist: "BROCKHAMPTON", duration: "3:50" },
+    { id: 2, title: "Foreign", artist: "Playboi Carti", duration: "2:22" },
+    { id: 3, title: "1999 WILDFIRE", artist: "BROCKHAMPTON", duration: "3:50" },
     { id: 4, title: "jeans", artist: "2hollis", duration: "3:01" },
     { id: 5, title: "Me N My Kup", artist: "Ken Carson", duration: "3:54" },
     { id: 6, title: "poster boy", artist: "2hollis", duration: "2:01" },
