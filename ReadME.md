@@ -5,6 +5,7 @@
 Feelsync is a responsive web application that helps users discover music based on their current mood. Users can select from predefined moods, and the app displays songs that match the overall feeling of the mood. Each song includes details such as title, artist, duration, Spotify link, and a preview option that lets users listen before choosing. Each mood also has a link to the dedicated playlist.
 
 **Now deployed on Vercel**
+
 Web link: [here](https://feelsync-ochre.vercel.app/)
 
 ## Technologies Used
